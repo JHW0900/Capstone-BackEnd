@@ -58,6 +58,18 @@ const initialize = async () => {
             const insertRequestApplicant = require('@src/models/dummy/insertRequestApplicant');
             await insertRequestApplicant();
 
+            // Insert ChatRoom data
+            const insertChatRoom = require('@src/models/dummy/insertChatRoom');
+            await insertChatRoom();
+
+            // Insert ChatList data
+            const insertChatList = require('@src/models/dummy/insertChatList');
+            await insertChatList();
+
+            // Insert ChatMessage data
+            const insertChatMessage = require('@src/models/dummy/insertChatList');
+            await insertChatMessage();
+
             logger.info('Initial data inserted');
         }
     } catch(e){

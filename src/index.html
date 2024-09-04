@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="chatstyle/style.css">
+</head>
+<body>
+ <div class="wrapper">
+     <div class="user-container">
+         <label for="user_idx">대화명:</label>
+         <input type="text" id="user_idx">
+         <label for="room_idx">대화방:</label>
+         <input type="text" id="room_idx">
+     </div>
+     <div class="display-container">
+         <ul class="chatting_list">
+
+         </ul>
+     </div>
+     <div class="input-container">
+         <span>
+         <input type="text" class="chatting_input">
+         <button class="send-button">전송</button>
+         </span>
+     </div>
+
+ </div>
+ <script src="/socket.io/socket.io.js"></script>
+ <script src="js/chat.js"></script> <!-- js파일의 chat.js 8282포트의 서버 작동 확인용-->
+</body>
+</html>

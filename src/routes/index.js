@@ -9,6 +9,9 @@ const alarmTypeRoutes = require('./alarmTypeRoutes');
 const interestRequestRoutes = require('./interestRequestRoutes');
 const requestInfoRoutes = require('./requestInfoRoutes');
 const requestApplicantRoutes = require('./requestApplicantRoutes');
+const chatRoomRoutes = require('./chatRoomRoutes');
+const chatListRoutes = require('./chatListRoutes');
+const chatMessageRoutes = require('./chatMessageRoutes');
 
 const router = express.Router();
 
@@ -22,5 +25,8 @@ router.use('/alarmType', alarmTypeRoutes);
 router.use('/interestRequest', interestRequestRoutes);
 router.use('/requestinfo', requestInfoRoutes);
 router.use('/requestApplicant', requestApplicantRoutes);
+router.use('/chatRoom', chatRoomRoutes);
+router.use('/chatList', chatListRoutes);
+router.use('/chatMessage', chatMessageRoutes);
 
 module.exports = router;

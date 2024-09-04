@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    height: 100%;
+}
+.wrapper{
+    height: 100%;
+    width: 100%;
+    display: flex; /*옆으로 정렬*/
+    flex-direction: column; /*행으로 나열 =세로로*/
+    overflow: hidden; /*넘치면 숨기기*/
+}
+.user-container{ /*유저 정보 띄우는 곳*/
+    background: #a9bdce;
+    flex: 1; /*높이 비율*/
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /*높낮이 배치 결정*/
+    padding: 0.5rem;
+}
+.user-container label{
+    font-size: 14px;
+    margin-right: 1rem;
+}
+.user-container input{
+    border: none;
+    border-radius: 3px;
+    height: 70%;
+}
+
+.display-container{ /*채팅 리스트 올리는 곳*/
+    background: #b2c7d9;
+    flex: 12; /*높이 비율*/
+    overflow-y: scroll; /*화면 높이 초과시 스크롤 적용 */
+}
+.chatting_list li{
+    width: 70%;
+    padding: 0.3rem;
+    display: flex;   /* 중요!  이후 메세지를 보낸 주체에 따라 왼쪽 오른쪽 정렬이 결정됨*/
+    justify-content: flex-start;
+    align-items: flex-end; /*item 밑으로 정렬*/
+    margin-top: 0.5rem;
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.profile .image{ /*프로필 이미지 둥글게*/
+    border-radius: 50%;
+    object-fit: cover; /*크기 조절*/
+    width: 50px;
+    height: 50px;
+}
+.profile .user{
+    margin-bottom: 0.3rem;
+}
+
+.message{ /*메세지 모양*/
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 14px;
+    margin: 0 5px;
+    flex: 7;
+}
+.time{
+    font-size: 12px;
+    margin: 0 5px;
+}
+.send{
+    flex-direction: row-reverse; /*내가 보낸 메세지는 역으로 정렬하게 해 오른쪽에서 보이게 설정*/
+    float: right; /*오른쪽에 완전히 붙이기*/
+}
+.send .message{
+    background: #ffeb33;
+}
+.receive .message{
+    background: #fff;
+}
+
+.input-container{ /* 텍스트 입력창과 전송버튼 포함*/
+    flex: 1; /*높이 비율*/
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+}
+.input-container span{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.3rem;
+    width: 100%;
+}
+.chatting_input{ /*텍스트 입력창*/
+    font-size: 14px;
+    height: 100%;
+    flex: 8;
+    border: none;/*테두리 없애기*/
+}
+.send-button{ /*보내기 버튼*/
+    flex: 1;
+    height: 100%;
+    background: #ffeb33;
+    border: none;
+    border-radius: 3px;
+}
