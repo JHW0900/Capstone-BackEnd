@@ -26,7 +26,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use('/api', routes);
 
 ///////////////////socket.io chat구현 -시작-///////////////////////
-app.use(express.static(path.join(__dirname)));  //express.static() -지정한 폴더 src에서 자동으로 index가져감
+app.use(express.static(path.join(__dirname, "views")));  //express.static() -지정한 폴더 src에서 자동으로 index가져감
                                                 // 하위폴더 public이 있다면 path.join(__dirname, "public") 사용
 const PORT_CHAT = process.env.PORT_CHAT || 8282; // 채팅을 위한 포트
 server_chat.listen(PORT_CHAT, "0.0.0.0", () => {
