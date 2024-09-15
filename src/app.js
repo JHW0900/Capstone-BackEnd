@@ -34,9 +34,19 @@ server_chat.listen(PORT_CHAT, "0.0.0.0", () => {
 });
 
 io.on("connection", (socket)=>{ //서버에 연결
+    socket.on("enter_room",(data)=>{
+        console.log(socket.rooms);
+        socket.join(data.room);
+        socket.on("chatting", (data)=>{  // 서버가 데이터(data)를 받음
+            //io.emit("chatting", data) //데이터를 ["모든"]client에게 전송
+            io.to(data.room).emit("chatting", data);
+        })
+    })
+    /*
     socket.on("chatting", (data)=>{  // 서버가 데이터(data)를 받음
         io.emit("chatting", data) //데이터를 client에게 전송
     })
+    */
 })
 ///////////////////socket.io chat구현 -끝-///////////////////
 

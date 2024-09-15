@@ -107,3 +107,11 @@ html, body{
     border: none;
     border-radius: 3px;
 }
+.enter-room{ /*보내기 버튼*/
+    flex: 1;
+    height: 100%;
+    background: #ffeb33;
+    border: none;
+    border-radius: 3px;
+    margin-left: 1rem;
+}
