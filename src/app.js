@@ -34,9 +34,9 @@ server_chat.listen(PORT_CHAT, "0.0.0.0", () => {
 });
 
 io.on("connection", (socket)=>{ //서버에 연결
-    socket.on("enter_room",(data)=>{
+    socket.on("enter_room",(data)=>{ //방 입장 통신
         console.log(socket.rooms);
-        socket.join(data.room);
+        socket.join(data.room); // 입장 통신의 데이터에서 room번호를 받아 입장 또는 방 생성
         socket.on("chatting", (data)=>{  // 서버가 데이터(data)를 받음
             //io.emit("chatting", data) //데이터를 ["모든"]client에게 전송
             io.to(data.room).emit("chatting", data);

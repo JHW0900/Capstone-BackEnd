@@ -10,7 +10,6 @@ exports.createRequestInfo= async (req, res) => {
         in: 'body',
         required: true,
         schema: {
-            "request_idx": 1,
             "user_idx": 1,
             "request_region": "경남",
             "request_title": "공사장 야리끼리 3인 급구!",
