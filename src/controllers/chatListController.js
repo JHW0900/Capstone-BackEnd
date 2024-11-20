@@ -70,7 +70,7 @@ exports.getChatListsByIdx = async (req, res) => {
     }
 }
 
-exports.updateCommunityPost = async (req, res) => {
+exports.updateChatList = async (req, res) => {
     /*
     #swagger.description = "커뮤니티 댓글 정보 갱신"
     #swagger.tags = ['ChatList - 커뮤니티 댓글 테이블']

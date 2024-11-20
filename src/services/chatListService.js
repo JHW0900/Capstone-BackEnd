@@ -29,12 +29,12 @@ exports.getAllChatLists = async () => {
     //return await RequestInfo.findAll();
 }
 
-exports.getChatListsByIdx = async (chatData) => {
+exports.getChatListsByIdx = async (user_idx) => {
     const { body } = await esClient.search({
         index: 'chat_list',
         body: {
             query: {
-                term: { user_idx: chatData.user_idx}
+                term: { user_idx: user_idx}
             }
         }
     });

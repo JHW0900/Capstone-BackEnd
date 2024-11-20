@@ -18,6 +18,6 @@ router.post('/all', chatListController.getAllChatLists);
 /**
  * 특정 댓글 수정
  */
-router.post('/update', chatListController.updateCommunityPost);
+router.post('/update', chatListController.updateChatList);
 
 module.exports = router;

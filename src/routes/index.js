@@ -12,6 +12,10 @@ const requestApplicantRoutes = require('./requestApplicantRoutes');
 const chatRoomRoutes = require('./chatRoomRoutes');
 const chatListRoutes = require('./chatListRoutes');
 const chatMessageRoutes = require('./chatMessageRoutes');
+const userCreditInfoRoutes = require('./userCreditInfoRoutes');
+const creditHistoryRoutes = require('./creditHistoryRoutes');
+
+
 
 const router = express.Router();
 
@@ -23,10 +27,13 @@ router.use('/report', reportRoutes);
 router.use('/keyword', keywordRoutes);
 router.use('/alarmType', alarmTypeRoutes);
 router.use('/interestRequest', interestRequestRoutes);
-router.use('/requestinfo', requestInfoRoutes);
+router.use('/requestInfo', requestInfoRoutes);
 router.use('/requestApplicant', requestApplicantRoutes);
 router.use('/chatRoom', chatRoomRoutes);
 router.use('/chatList', chatListRoutes);
 router.use('/chatMessage', chatMessageRoutes);
+router.use('/userCreditInfo', userCreditInfoRoutes);
+router.use('/creditHistory', creditHistoryRoutes);
+
 
 module.exports = router;

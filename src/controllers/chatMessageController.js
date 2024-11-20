@@ -62,7 +62,7 @@ exports.getChatMessagesByRoom = async (req, res) => {
     */
     try{
         logger.info(`${requestIp.getClientIp(req)} POST /api/ChatMessage`);
-        const chatData = await chatMessageService.getChatMessagesByRoom(req.body.chat_room_idx);
+        const chatData = await chatMessageService.getChatMessagesByRoom(req.body.chat_idx);
         res.json(chatData);
     } catch (e){
         logger.error(`${requestIp.getClientIp(req)} POST /api/ChatMessage 500 ERROR: ${e.message}`);

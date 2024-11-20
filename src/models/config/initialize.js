@@ -67,8 +67,16 @@ const initialize = async () => {
             await insertChatList();
 
             // Insert ChatMessage data
-            const insertChatMessage = require('@src/models/dummy/insertChatList');
+            const insertChatMessage = require('@src/models/dummy/insertChatMessage');
             await insertChatMessage();
+
+            // Insert UserCreditInfo data
+            const insertUserCreditInfo = require('@src/models/dummy/insertUserCreditInfo');
+            await insertUserCreditInfo();
+
+            // Insert CreditHistory data
+            const insertCreditHistory = require('@src/models/dummy/insertCreditHistory');
+            await insertCreditHistory();
 
             logger.info('Initial data inserted');
         }

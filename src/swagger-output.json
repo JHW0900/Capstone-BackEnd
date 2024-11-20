@@ -905,7 +905,7 @@
         }
       }
     },
-    "/api/requestinfo/": {
+    "/api/requestInfo/": {
       "put": {
         "tags": [
           "requestInfo - 의뢰 정보 테이블"
@@ -919,10 +919,6 @@
             "schema": {
               "type": "object",
               "properties": {
-                "request_idx": {
-                  "type": "number",
-                  "example": 1
-                },
                 "user_idx": {
                   "type": "number",
                   "example": 1
@@ -999,7 +995,7 @@
         }
       }
     },
-    "/api/requestinfo/all": {
+    "/api/requestInfo/all": {
       "post": {
         "tags": [
           "requestInfo - 의뢰 정보 테이블"
@@ -1015,7 +1011,7 @@
         }
       }
     },
-    "/api/requestinfo/update": {
+    "/api/requestInfo/update": {
       "post": {
         "tags": [
           "requestInfo - 의뢰 정보 테이블"
@@ -1598,6 +1594,269 @@
                 "cmt_detail": {
                   "type": "string",
                   "example": "수정된 댓글입니다."
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "성공"
+          },
+          "500": {
+            "description": "내부 서버 오류"
+          }
+        }
+      }
+    },
+    "/api/userCreditInfo/": {
+      "put": {
+        "tags": [
+          "UserCreditInfo - 사용자 소유 크레딧 테이블"
+        ],
+        "description": "사용자 소유 크레딧 수량 추가",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user_idx": {
+                  "type": "number",
+                  "example": 1
+                },
+                "credit_amount": {
+                  "type": "number",
+                  "example": 200
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "작성됨"
+          },
+          "500": {
+            "description": "내부 서버 오류"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "UserCreditInfo - 사용자 소유 크레딧 테이블"
+        ],
+        "description": "사용자 소유 크레딧 수량 추가",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user_idx": {
+                  "type": "number",
+                  "example": 1
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "성공"
+          },
+          "500": {
+            "description": "내부 서버 오류"
+          }
+        }
+      }
+    },
+    "/api/userCreditInfo/all": {
+      "post": {
+        "tags": [
+          "UserCreditInfo - 사용자 소유 크레딧 테이블"
+        ],
+        "description": "사용자 소유 크레딧 수량 추가",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "성공"
+          },
+          "500": {
+            "description": "내부 서버 오류"
+          }
+        }
+      }
+    },
+    "/api/userCreditInfo/update": {
+      "post": {
+        "tags": [
+          "UserCreditInfo - 사용자 소유 크레딧 테이블"
+        ],
+        "description": "사용자 소유 크레딧 수량 추가",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user_idx": {
+                  "type": "number",
+                  "example": 1
+                },
+                "credit_amount": {
+                  "type": "number",
+                  "example": 120
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "성공"
+          },
+          "500": {
+            "description": "내부 서버 오류"
+          }
+        }
+      }
+    },
+    "/api/creditHistory/": {
+      "put": {
+        "tags": [
+          "creditHistory - credit 거래 내역 테이블"
+        ],
+        "description": "새로운 credit 거래 내역 추가",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "host_user_idx": {
+                  "type": "number",
+                  "example": 1
+                },
+                "apply_user_idx": {
+                  "type": "number",
+                  "example": 2
+                },
+                "request_idx": {
+                  "type": "number",
+                  "example": 3
+                },
+                "trade_amount": {
+                  "type": "number",
+                  "example": 120
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "작성됨"
+          },
+          "500": {
+            "description": "내부 서버 오류"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "creditHistory - credit 거래 내역 테이블"
+        ],
+        "description": "새로운 credit 거래 내역 추가",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "credit_trade_idx": {
+                  "type": "number",
+                  "example": 1
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "성공"
+          },
+          "500": {
+            "description": "내부 서버 오류"
+          }
+        }
+      }
+    },
+    "/api/creditHistory/all": {
+      "post": {
+        "tags": [
+          "creditHistory - credit 거래 내역 테이블"
+        ],
+        "description": "새로운 credit 거래 내역 추가",
+        "responses": {
+          "200": {
+            "description": "성공"
+          },
+          "500": {
+            "description": "내부 서버 오류"
+          }
+        }
+      }
+    },
+    "/api/creditHistory/update": {
+      "post": {
+        "tags": [
+          "creditHistory - credit 거래 내역 테이블"
+        ],
+        "description": "새로운 credit 거래 내역 추가",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "host_user_idx": {
+                  "type": "number",
+                  "example": 1
+                },
+                "apply_user_idx": {
+                  "type": "number",
+                  "example": 2
+                },
+                "request_idx": {
+                  "type": "number",
+                  "example": 3
+                },
+                "trade_amount": {
+                  "type": "number",
+                  "example": 2500
                 }
               }
             }

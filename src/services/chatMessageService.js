@@ -44,12 +44,12 @@ exports.getChatMessagesByIdx = async (chat_idx) => {
     return body.hits.hits.map(hit => hit._source);
 }
 
-exports.getChatMessagesByRoom = async (room_idx) => {
+exports.getChatMessagesByRoom = async (chat_idx) => {
     const { body } = await esClient.search({
         index: 'chat_message',
         body: {
             query: {
-                term: { chat_room_idx: room_idx}
+                term: { chat_idx: chat_idx}
             }
         }
     });
